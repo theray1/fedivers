@@ -1,0 +1,6 @@
+.idea/*
+*/target/*
+
+
+### Mac OS ###
+.DS_Store

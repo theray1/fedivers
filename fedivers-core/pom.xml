@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.gdd</groupId>
+    <artifactId>fedivers-core</artifactId>
+    <name>fedivers-core</name>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>fr.gdd</groupId>
+        <artifactId>fedivers</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <maven.compiler.source>26</maven.compiler.source>
+        <maven.compiler.target>26</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>fr.gdd</groupId>
+            <artifactId>jena-utils</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-base</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+
+        <!-- get the federation engine FedX -->
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-core</artifactId>
+            <type>pom</type>
+            <version>5.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-tools-federation</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-repository-http</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+
+        <!-- Important for their query optimizers -->
+        <dependency>
+            <groupId>se.liu.research.hefquin</groupId>
+            <artifactId>hefquin</artifactId>
+            <type>pom</type>
+            <version>0.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>se.liu.research.hefquin</groupId>
+            <artifactId>hefquin-base</artifactId>
+            <version>0.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>se.liu.research.hefquin</groupId>
+            <artifactId>hefquin-engine</artifactId>
+            <version>0.0.10</version>
+        </dependency>
+    </dependencies>
+
+</project>
