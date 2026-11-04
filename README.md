@@ -13,6 +13,20 @@ cd fedivers
 mvn clean package
 ```
 
+# GitHub Codespace
+
+When opening the project inside a GitHub codespace, the container automatically runs ```.devcontainer/setup.sh```. This
+installs java 27, which is required to build the project. When using the codespace, you also need to specify the
+java version to be used by the environment :
+
+```shell
+echo "Adding jdk to SDKMAN!"
+sdk install java jdk-27 $(realpath jdk-27.0.1.0.3/)
+
+echo "Using jdk 27"
+sdk default java jdk-27
+```
+
 ## Usage Example
 
 ```sh
