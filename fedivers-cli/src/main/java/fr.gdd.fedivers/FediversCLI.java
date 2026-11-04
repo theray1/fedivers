@@ -1,7 +1,6 @@
 package fr.gdd.fedivers;
 
 import fr.gdd.fedivers.adapters.FedXIterator2JenaIterator;
-import fr.gdd.fedivers.adapters.HeFQUIN2JenaIterator;
 import fr.gdd.fedivers.sources.ToFederatedQueryFactory;
 import fr.gdd.fedivers.sources.UOJ2JOU;
 import fr.gdd.fedivers.summaries.IGraph2SourceDataset;
@@ -15,8 +14,6 @@ import org.apache.jena.sparql.algebra.*;
 import org.apache.jena.sparql.algebra.optimize.TransformReorder;
 import org.apache.jena.sparql.core.Var;
 import org.apache.jena.sparql.engine.QueryIterator;
-import org.apache.jena.sparql.engine.binding.BindingRoot;
-import org.apache.jena.sparql.engine.main.QueryEngineMain;
 import org.apache.jena.sparql.exec.RowSet;
 import org.apache.jena.sparql.exec.RowSetStream;
 import org.apache.jena.sparql.util.Context;
@@ -319,12 +316,12 @@ public class FediversCLI {
     }
 
     public QueryIterator executeWithJena(Op queryAsJena) {
-        QueryEngineMain engine = new QueryEngineMain(queryAsJena, DatasetFactory.empty().asDatasetGraph(), BindingRoot.create(), new Context());
-        return engine.eval(queryAsJena, DatasetFactory.empty().asDatasetGraph(), BindingRoot.create(), new Context());
+        return Algebra.exec(queryAsJena, DatasetFactory.empty().asDatasetGraph()) ;
     }
 
     public QueryIterator executeWithHeFQUIN(FediversContext context, Op query) {
-        return new HeFQUIN2JenaIterator(context, query);
+        throw new UnsupportedOperationException("Not supported yet.");
+//        return new HeFQUIN2JenaIterator(context, query);
     }
 
 }
