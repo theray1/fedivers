@@ -23,7 +23,7 @@ java -jar fedivers-cli/target/fedivers.jar \
 --strategy fedup \
 --endpoint-prefix https://10-54-2-226.gcp.glicid.fr/fedshop200/sparql\?default-graph-uri= \
 --no-mdcd-unary-push-down \
---asks \
+--asks
 ```
 
 ## References
